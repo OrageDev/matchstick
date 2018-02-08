@@ -14,7 +14,8 @@ SRC	=	my_getnbr.c		\
 		my_putchar.c		\
 		my_put_nbr.c		\
 		my_putstr.c		\
-		my_strlen.c
+		my_strlen.c		\
+		my_atoi.c
 
 OBJ	=	$(SRC:.c=.o)
 

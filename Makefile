@@ -16,11 +16,10 @@ DIR	=	./src
 RM	=	rm -f
 
 SRC	=	./src/main.c		\
-		./src/foo.c		\
-		./src/gnl.c		\
-		./src/print.c		\
-		./src/match.c		\
-		./src/input.c
+		./src/get_next_line.c	\
+		./src/utilities.c	\
+		./src/get_player.c	\
+		./src/get_ai.c
 
 OBJ	=	$(SRC:.c=.o)
 

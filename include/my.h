@@ -18,5 +18,7 @@ int my_put_nbr(int nb);
 int my_put_big_nbr(unsigned int nb);
 int my_put_base(int nb, int base);
 int my_printf(const char *format, ...);
+int is_num(char c);
+int my_atoi(char *str);
 
 #endif

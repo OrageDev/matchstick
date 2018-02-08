@@ -5,8 +5,8 @@
 ** gnl
 */
 
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int check_buffer(char *buff)
 {
