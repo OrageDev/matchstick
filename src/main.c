@@ -61,7 +61,7 @@ void matchstick(map_t *map)
 			write(1, "\nYour turn:\n", 12);
 			get_player_turn(map);
 		} else {
-			write(1, "\nAI's turn...\n", 13);
+			write(1, "\nAI's turn...\n", 14);
 			ai_turn(map);
 		}
 		end = is_won(map);

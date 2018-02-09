@@ -5,6 +5,7 @@
 ** ai
 */
 
+#include <time.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "matchstick.h"
@@ -15,6 +16,7 @@ void ai_turn(map_t *map)
 	int matches;
 	int ok = 0;
 
+	srand(time(NULL));
 	while (!ok) {
 		line = (rand() % map->row) + 1;
 		if (map->match[line - 1] > 0)

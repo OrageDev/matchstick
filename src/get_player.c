@@ -43,15 +43,20 @@ void get_player_turn(map_t *map)
 	int matches;
 
 	line = get_line();
-	if (line < 1 || line > map->row) {
+	if (line == 0 || line > map->row) {
 		write(1, "Error: this line is out of range\n", 33);
+		map->success = 0;
+		return;
+	} else {
+		write(1, "Error: invalid input (positive number expected)\n", \
+		      48);
 		map->success = 0;
 		return;
 	}
 	matches = get_matches();
 	if (matches < 1 || matches > map->max_matches) {
 		my_printf("%s %d %s", "Error: you cannot remove more than", \
-		       map->max_matches, "matches per turn\n");
+			  map->max_matches, "matches per turn\n");
 		map->success = 0;
 		return;
 	}
