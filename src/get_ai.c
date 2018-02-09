@@ -10,21 +10,50 @@
 #include <unistd.h>
 #include "matchstick.h"
 
-void ai_turn(map_t *map)
+int get_all_xor(map_t *map)
 {
-	int line;
-	int matches;
+	int xor = map->match[0];
+
+	for (int i = 1; i < map->row; i++) {
+		xor = xor ^ map->match[i];
+	}
+	return (xor);
+}
+
+void emergency_remove(map_t *map)
+{
 	int ok = 0;
+	int line;
 
 	srand(time(NULL));
 	while (!ok) {
-		line = (rand() % map->row) + 1;
-		if (map->match[line - 1] > 0)
+		line = (rand() % map->row);
+		if (map->match[line] != 0)
 			ok = 1;
 	}
-	ok = 0;
-	matches = (rand() % map->max_matches) + 1;
+	sub_matches(map, (line + 1), 1);
+}
+
+void get_ai(map_t *map)
+{
+	int xor = 0;
+
+	for (int i = 0; i < map->row; i++) {
+		for (int j = 0; j < map->match[i]||j < map->max_matches; j++) {
+			map->match[i] -= j;
+			xor = get_all_xor(map);
+			map->match[i] += j;
+			if (xor == 1 && j != 0) {
+				sub_matches(map, (i + 1), j);
+				return;
+			}
+		}
+	}
+	emergency_remove(map);
+}
+
+void ai_turn(map_t *map)
+{
 	map->turn = 1;
-	sub_matches(map, line, matches);
-	return;
+        get_ai(map);
 }

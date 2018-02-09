@@ -19,7 +19,9 @@ typedef struct map {
 
 int get_line(void);
 int get_matches(void);
-void get_player_turn(map_t *map);
+void is_line_good(map_t *map, int line);
+void is_match_good(map_t *map, int matches, int line);
+int get_player_turn(map_t *map);
 
 /* get_ai.c
 ** time | stdlib | unistd | matchstick
@@ -40,6 +42,6 @@ void prepare_map(map_t *map, char **av);
 */
 
 void sub_matches(map_t *map, int line, int matches);
-void win_message(map_t *map);
+int win_message(map_t *map);
 int is_won(map_t *map);
-void matchstick(map_t *map);
+int matchstick(map_t *map);

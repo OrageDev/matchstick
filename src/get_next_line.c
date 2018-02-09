@@ -22,10 +22,9 @@ int my_strlen2(char *str, char c)
 
 	if (str == NULL)
 		return (-1);
-	for (; str[length] != '\0' || str[length] == c; length++) {
+	for (; str[length] != '\0' || str[length] == c; length++)
 		if (str[length] == c)
 			return (length);
-	}
 	return (-1);
 }
 

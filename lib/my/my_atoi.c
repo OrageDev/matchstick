@@ -22,9 +22,9 @@ int my_atoi(char *str)
 	int nbr = 0;
 	int is_neg = 1;
 
-	if (is_char(*str))
-		return (-1);
 	while (*str) {
+		if (is_char(*str))
+			return (-1);
 		if (*str == '-') {
 			is_neg = -1;
 			str++;

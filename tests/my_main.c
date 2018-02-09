@@ -70,7 +70,7 @@ int matchstick(map_t *map)
 	return ((p_turn == (-2)) ? 0 : win_message(map));
 }
 
-int main(int ac, char **av)
+int my_main(int ac, char **av)
 {
 	map_t *map = malloc (sizeof(map_t));
 
