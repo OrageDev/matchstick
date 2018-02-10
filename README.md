@@ -28,6 +28,5 @@ AI removed 6 match(es) from line 4
 *********
 
 Your turn:
-Line:
->EOF
+Line: (EOF simulated with CTRL+D)$>
 ```
