@@ -38,10 +38,30 @@ void print_map(map_t *map)
 	print_stars(width + 2);
 }
 
+int my_sec_atoi(char *str)
+{
+	int nbr = 0;
+	int is_neg = 1;
+
+	while (*str) {
+		if (*str == '-') {
+			is_neg = -1;
+			str++;
+		} else if (*str == ' ') {
+			str++;
+		} else {
+			nbr = ((*str - '0') + nbr);
+			nbr = nbr * 10;
+			str++;
+		}
+	}
+	return ((nbr * is_neg) / 10);
+}
+
 void prepare_map(map_t *map, char **av)
 {
-	map->row = my_atoi(av[1]);
-	map->max_matches = my_atoi(av[2]);
+	map->row = my_sec_atoi(av[1]);
+	map->max_matches = my_sec_atoi(av[2]);
 	map->success = 1;
 	map->turn = 1;
 	map->match = malloc (sizeof(int) * map->row);
