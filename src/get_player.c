@@ -42,35 +42,35 @@ void is_line_good(map_t *map, int line)
 	if (line == 0 || line > map->row) {
 		write(1, "Error: this line is out of range\n", 33);
 		map->success = 0;
-		return;
+		return ;
 	} else if (line < 0) {
 		write(1, "Error: invalid input (positive number expected)\n", \
-		      48);
+		48);
 		map->success = 0;
-		return;
+		return ;
 	}
 }
 void is_match_good(map_t *map, int matches, int line)
 {
 	if (matches > map->max_matches) {
 		my_printf("%s %d %s", "Error: you cannot remove more than", \
-			  map->max_matches, "matches per turn\n");
+		map->max_matches, "matches per turn\n");
 		map->success = 0;
-		return;
+		return ;
 	} else if (matches == 0) {
 		write(1, "Error: you have to remove at least one match\n", 45);
 		map->success = 0;
-		return;
+		return ;
 	}
 	if (matches < 0){
 		write(1, "Error: invalid input (positive number expected)\n", \
-		      48);
+		48);
 		map->success = 0;
-		return;
+		return ;
 	} else if (matches > map->match[line - 1]) {
 		write(1, "Error: not enough matches on this line\n", 39);
 		map->success = 0;
-		return;
+		return ;
 	}
 }
 

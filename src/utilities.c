@@ -67,7 +67,7 @@ void prepare_map(map_t *map, char **av)
 	map->match = malloc (sizeof(int) * map->row);
 	if (!map->match) {
 		map->success = 0;
-		return;
+		return ;
 	}
 	for (int i = 0; i < map->row; i++)
 		map->match[i] = (2 * i) + 1;

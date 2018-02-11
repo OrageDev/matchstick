@@ -45,7 +45,7 @@ void get_ai(map_t *map)
 			map->match[i] += j;
 			if (xor == 1 && j != 0) {
 				sub_matches(map, (i + 1), j);
-				return;
+				return ;
 			}
 		}
 	}
@@ -55,5 +55,5 @@ void get_ai(map_t *map)
 void ai_turn(map_t *map)
 {
 	map->turn = 1;
-        get_ai(map);
+	get_ai(map);
 }

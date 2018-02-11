@@ -5,6 +5,9 @@
 ** matchstick
 */
 
+#ifndef MATCHSTICK_H
+# define MATCHSTICK_H
+
 typedef struct map {
 	int row;
 	int max_matches;
@@ -45,3 +48,5 @@ void sub_matches(map_t *map, int line, int matches);
 int win_message(map_t *map);
 int is_won(map_t *map);
 int matchstick(map_t *map);
+
+#endif /* MATCHSTICK_H */

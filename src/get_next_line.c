@@ -45,7 +45,7 @@ char *my_strjoin(char *begin, char *end, int i)
 char *get_next_line(int fd)
 {
 	static char buffer[1];
-        int i = 0;
+	int i = 0;
 	char *ret;
 	int test = 0;
 
