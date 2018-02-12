@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2018
-** ai
+** get_ai
 ** File description:
-** ai
+** get_ai
 */
 
 #include <time.h>

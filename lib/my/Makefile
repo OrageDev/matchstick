@@ -7,8 +7,7 @@
 
 RM	=	rm -f
 
-SRC	=	my_getnbr.c		\
-		my_printf.c		\
+SRC	=	my_printf.c		\
 		my_put_base.c		\
 		my_put_big_nbr.c	\
 		my_putchar.c		\
