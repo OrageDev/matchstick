@@ -20,6 +20,8 @@ void sub_matches(map_t *map, int line, int matches)
 		write(1, "Player ", 7);
 	else
 		write(1, "AI ", 3);
+	if (matches > map->max_matches)
+		matches = map->max_matches;
 	if (matches > map->match[line - 1])
 		matches = map->match[line - 1];
 	map->match[line - 1] = map->match[line - 1] - matches;
