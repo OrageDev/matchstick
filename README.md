@@ -39,3 +39,7 @@ AI removed 5 match(es) from line 4
 Your turn:
 Line: (EOF simulated with CTRL+D)$>
 ```
+
+## to do
+ai's effectivness isn't at its best because it can't remove more than av[2] stick(s) per turn:
+-get an "emergency mode" where if the ai has to delete MORE, it searches a way to delete LESS
